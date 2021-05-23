@@ -9,7 +9,7 @@ import com.jio.tesseract.model.PhoneData
 
 
 object PhoneList {
-    fun getInstalledApps(getSysPackages: Boolean, context: Context): List<PhoneData> {
+    fun getInstalledApps(context: Context): List<PhoneData> {
         val packs: List<PackageInfo> = context.getPackageManager().getInstalledPackages(0)
         val list: MutableList<PhoneData> = ArrayList()
         for (i in packs.indices) {
@@ -29,7 +29,6 @@ object PhoneList {
             }
         }
         return list
-
     }
 
     fun isSystemPackage(pkgInfo: PackageInfo): Boolean {
